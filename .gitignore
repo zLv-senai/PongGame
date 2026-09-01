@@ -1,0 +1,36 @@
+# Pastas geradas pelo Unity (recriadas sozinhas ao abrir o projeto)
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# IDEs
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.user
+*.suo
+*.userprefs
+
+# Builds
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Crash reports
+sysinfo.txt
+crashlytics-build.properties
