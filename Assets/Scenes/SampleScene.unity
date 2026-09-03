@@ -1102,10 +1102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e067c5d430c33f64c864fae6eafd62e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BallControls
-  velocidadeInicial: 6
+  velocidadeInicial: 8
   aumentoPorRebatida: 0.4
   velocidadeMaxima: 14
   anguloMaximo: 50
+  minimoHorizontal: 0.35
   somRebatida: {fileID: 8300000, guid: ae4cc8e80372b694c9e7ec705d7fdd73, type: 3}
 --- !u!1 &1821519981
 GameObject:
