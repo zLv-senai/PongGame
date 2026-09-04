@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     public Font fonteJogo;
     public Color corDaUI = Color.white;
 
+    [Header("Enquadramento")]
+    public float margemLateral = 0.8f;
+
     [Header("Som")]
     public AudioClip somPonto;
 
@@ -63,6 +66,7 @@ public class GameManager : MonoBehaviour
 
         ProcurarObjetosDaCena();
         ConstruirInterface();
+        PosicionarRaquetes();
 
         if (Camera.main != null)
         {
@@ -95,6 +99,26 @@ public class GameManager : MonoBehaviour
         {
             if (raquete.jogador1) raqueteEsquerda = raquete;
             else raqueteDireita = raquete;
+        }
+    }
+
+    // A largura visivel depende do formato da janela, entao a posicao
+    // das raquetes vem da camera em vez de ser cravada na cena
+    private void PosicionarRaquetes()
+    {
+        if (Camera.main == null) return;
+
+        float metadeLargura = Camera.main.orthographicSize * Camera.main.aspect;
+        float x = metadeLargura - margemLateral;
+
+        if (raqueteEsquerda != null)
+        {
+            raqueteEsquerda.transform.position = new Vector3(-x, 0f, 0f);
+        }
+
+        if (raqueteDireita != null)
+        {
+            raqueteDireita.transform.position = new Vector3(x, 0f, 0f);
         }
     }
 
@@ -301,7 +325,7 @@ public class GameManager : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-            Application.Quit();
+        Application.Quit();
 #endif
     }
 }
